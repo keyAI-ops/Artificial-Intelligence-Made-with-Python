@@ -36,6 +36,6 @@ generator=ImageDataGenerator(width_shift_range=0.1,height_shift_range=0.1,horizo
 # 데이터 증대를 적용할 때는 fit 말고 fit_generator를 사용 / flow 함수를 통해 학습 중 실시간으로 변형된 샘플이 생성되도록 설정
 hist=cnn.fit_generator(generator.flow(x_train,y_train,batch_size=batch_siz),epochs=50,validation_data=(x_test,y_test),verbose=2)
 
-# evaluate cnn model
+# evaluate cnn_model
 res=cnn.evaluate(x_test,y_test,verbose=0)
 print("정확률은",res[1]*100)
